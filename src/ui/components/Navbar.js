@@ -118,11 +118,11 @@ const Navbar = (props) => {
 
   const allCategories = [0, ...new Set(notes.map((item) => item.category))];
   const allCategoriesIcons = [
-    <NotesOutlinedIcon />,
-    <SummarizeOutlinedIcon />,
-    <NoteAltOutlinedIcon />,
-    <NotificationsNoneOutlinedIcon />,
-    <FormatListNumberedOutlinedIcon />,
+    <NotesOutlinedIcon key={99} />,
+    <SummarizeOutlinedIcon key={100} />,
+    <NoteAltOutlinedIcon key={101} />,
+    <NotificationsNoneOutlinedIcon key={102} />,
+    <FormatListNumberedOutlinedIcon key={103} />,
   ];
   console.log(allCategories);
 
