@@ -4,12 +4,10 @@ import Navbar from '../ui/components/Navbar';
 import { ThemeProvider } from '@emotion/react';
 import Masonry from '@mui/lab/Masonry';
 import { useSelector } from 'react-redux';
-import { hydrate } from '../store/slices/dataSlice';
 import LocalizedStrings from 'react-localization';
 import index_loc from '../localization/index_loc';
 import Notecard from '../ui/components/Notecard';
 import InputForm from '../ui/components/InputForm';
-import { useEffect } from 'react';
 
 const Home = () => {
   const theme = useSelector((state) => state.settings.theme);
@@ -19,9 +17,6 @@ const Home = () => {
   if (!notes) {
     notes = [];
   }
-  const categoryToDisplay = useSelector(
-    (state) => state.data.categoryToDisplay
-  );
   const notesToDisplay = useSelector((state) => state.data.notesToDisplay);
   if (!notesToDisplay) {
     notesToDisplay = [];

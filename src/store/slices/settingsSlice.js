@@ -1,20 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createTheme } from '@mui/material/styles';
+import themes from '../../styles/themes';
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
-const lightTheme = createTheme({
-  palette: {
-    mode: 'light',
-  },
-});
+console.log('themes: ', themes);
 
 const initialState = {
   isDarkTheme: true,
-  theme: darkTheme,
+  theme: themes[0],
   lang: 'en',
   langs: ['en', 'ru'],
   langIndex: 0,
@@ -26,11 +17,11 @@ const settingsSlice = createSlice({
   reducers: {
     toggleTheme: (state) => {
       if (state.isDarkTheme) {
-        state.theme = lightTheme;
-        state.isDarkTheme = false;
+        isDarkTheme = false;
+        theme = themes[1];
       } else {
-        state.theme = darkTheme;
-        state.isDarkTheme = true;
+        isDarkTheme = true;
+        theme = themes[0];
       }
     },
     toggleLang: (state) => {
