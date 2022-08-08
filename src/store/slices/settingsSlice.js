@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import themes from '../../styles/themes';
+import { theme_dark, theme_light } from '../../styles/themes';
 
-console.log('themes: ', themes);
+console.log(theme_dark, theme_light);
 
 const initialState = {
   isDarkTheme: true,
-  theme: themes[0],
+  theme: theme_dark,
   lang: 'en',
   langs: ['en', 'ru'],
   langIndex: 0,
@@ -17,11 +17,11 @@ const settingsSlice = createSlice({
   reducers: {
     toggleTheme: (state) => {
       if (state.isDarkTheme) {
-        isDarkTheme = false;
-        theme = themes[1];
+        state.isDarkTheme = false;
+        state.theme = theme_light;
       } else {
-        isDarkTheme = true;
-        theme = themes[0];
+        state.isDarkTheme = true;
+        state.theme = theme_dark;
       }
     },
     toggleLang: (state) => {
