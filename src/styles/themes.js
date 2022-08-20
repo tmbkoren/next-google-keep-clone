@@ -12,6 +12,9 @@ let lightTheme = createTheme({
   },
 });
 
+darkTheme = responsiveFontSizes(darkTheme);
+lightTheme = responsiveFontSizes(lightTheme);
+
 console.log(darkTheme);
 console.log(lightTheme);
 

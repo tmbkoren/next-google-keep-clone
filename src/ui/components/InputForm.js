@@ -48,6 +48,7 @@ const InputForm = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        width: '100%',
       }}
     >
       <Paper
@@ -55,8 +56,11 @@ const InputForm = () => {
         sx={{
           boxShadow: '2px 3px 10px #000',
           padding: '.5rem .7rem',
-          minWidth: '35rem',
-          maxWidth: '50%',
+          width: '100%',
+          maxWidth: {
+            xs: '100%',
+            md: '45rem',
+          },
           borderRadius: '10px',
         }}
       >

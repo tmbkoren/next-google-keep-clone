@@ -41,7 +41,7 @@ const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     width: '50%',
   },
   transition: theme.transitions.create('width', {
@@ -58,7 +58,7 @@ const closedMixin = (theme) => ({
   }),
   overflowX: 'hidden',
   width: `0 `,
-  [theme.breakpoints.up('sm')]: {
+  [theme.breakpoints.up('md')]: {
     width: `calc(${theme.spacing(8)} + 1px)`,
   },
 });
@@ -83,7 +83,7 @@ const AppBar = styled(MuiAppBar, {
   ...(open && {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       marginLeft: 0,
       width: '50%',
     },
@@ -138,7 +138,7 @@ const Navbar = (props) => {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', maxWidth: '100%' }}>
       <CssBaseline />
       <AppBar position='fixed' open={open}>
         <Toolbar>
@@ -205,7 +205,7 @@ const Navbar = (props) => {
           ))}
         </List>
       </Drawer>
-      <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
+      <Box component='main' sx={{ flexGrow: 5, p: 3 }}>
         <DrawerHeader />
         {props.children}
       </Box>

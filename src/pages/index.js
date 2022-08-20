@@ -29,14 +29,7 @@ const Home = () => {
       <CssBaseline />
       <Head>
         <title>{strings.title}</title>
-        <link
-          rel='stylesheet'
-          href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
-        />
-        <link
-          rel='stylesheet'
-          href='https://fonts.googleapis.com/icon?family=Material+Icons'
-        />
+        <meta name='viewport' content='initial-scale=0.5, maximum-scale=0.5' />
       </Head>
       <Navbar>
         <Grid container spacing={10}>
@@ -45,7 +38,7 @@ const Home = () => {
           </Grid>
           <Grid item xs={12}>
             <Box>
-              <Masonry columns={{ xs: 1, sm: 4 }} spacing={2}>
+              <Masonry columns={{ xs: 1, md: 4 }} spacing={2}>
                 {notesToDisplay.map((item) => (
                   <Notecard key={item.id} {...item} />
                 ))}
